@@ -74,10 +74,10 @@ export class CreateComponent {
 
         this.router.navigate(['/pagos']);
       },
-      error: () => {
+      error: (e) => {
         Swal.fire(
           'Error',
-          'No se pudo registrar el pago',
+          e?.error?.message || 'No se pudo registrar el pago',
           'error'
         );
       }
